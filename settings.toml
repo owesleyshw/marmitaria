@@ -1,0 +1,14 @@
+[default]
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+[production]
+SECRET_KEY = "@jinja {{env.SECRET_KEY}}"
+SQLALCHEMY_DATABASE_URI = "@jinja {{env.DB_URI}}"
+
+[development]
+SECRET_KEY = 'secret'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///database/development.sqlite'
+
+[testing]
+SECRET_KEY = 'secret'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///'
